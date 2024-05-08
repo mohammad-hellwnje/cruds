@@ -36,7 +36,7 @@ submit.onclick = function() {
         taxes:taxes.value,
         ads:ads.value,
         discount:discount.value,
-        total:total.value,
+        total:total.innerHTML,
         category:category.value.toLowerCase(),
         count:count.value,
     }
@@ -57,7 +57,7 @@ submit.onclick = function() {
     }
     localStorage.setItem('product',JSON.stringify(dataPro))
     clearData();
-    showData ()
+    showData ();
 }
 
 
@@ -88,8 +88,7 @@ function showData () {
         <td>${dataPro[i].category}</td>
         <td><button onclick="updateData(${i})" id="update">update</button></td>
         <td><button onclick="deleteData(${i})" id="delete">delete</button></td>
-    </tr>
-        `
+    </tr>    `
     }
     document.getElementById('tbody').innerHTML = table;
     let btnDelete = document.getElementById('deleteAll')
